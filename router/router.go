@@ -53,7 +53,7 @@ func RoutersInit() *gin.Engine {
 		p := c.Group("/post")
 		{
 			postV := validate.NewValidate().NewPostV.MyValidate()
-			p.GET("/", m2.Permission("console.post.index"), consolePost.Index)
+			p.GET("", m2.Permission("console.post.index"), consolePost.Index)
 			p.GET("/create", m2.Permission("console.post.create"), consolePost.Create)
 			p.POST("/", m2.Permission("console.post.store"), postV, consolePost.Store)
 			p.GET("/edit/:id", m2.Permission("console.post.edit"), consolePost.Edit)
@@ -67,7 +67,7 @@ func RoutersInit() *gin.Engine {
 		cate := c.Group("/cate")
 		{
 			cateV := validate.NewValidate().NewCateV.MyValidate()
-			cate.GET("/", m2.Permission("console.cate.index"), consoleCate.Index)
+			cate.GET("", m2.Permission("console.cate.index"), consoleCate.Index)
 			cate.GET("/edit/:id", m2.Permission("console.cate.edit"), consoleCate.Edit)
 			cate.PUT("/:id", m2.Permission("console.cate.update"), cateV, consoleCate.Update)
 			cate.POST("/", m2.Permission("console.cate.store"), cateV, consoleCate.Store)
@@ -85,14 +85,14 @@ func RoutersInit() *gin.Engine {
 		system := c.Group("/system")
 		{
 			systemV := validate.NewValidate().NewSystemV.MyValidate()
-			system.GET("/", m2.Permission("console.system.index"), consoleSystem.Index)
+			system.GET("", m2.Permission("console.system.index"), consoleSystem.Index)
 			system.PUT("/:id", m2.Permission("console.system.update"), systemV, consoleSystem.Update)
 		}
 		link := c.Group("/link")
 		{
 			linkV := validate.NewValidate().NewLinkV.MyValidate()
-			link.GET("/", m2.Permission("console.link.index"), consoleLink.Index)
-			link.POST("/", m2.Permission("console.link.store"), linkV, consoleLink.Store)
+			link.GET("", m2.Permission("console.link.index"), consoleLink.Index)
+			link.POST("", m2.Permission("console.link.store"), linkV, consoleLink.Store)
 			link.GET("/edit/:id", m2.Permission("console.link.edit"), consoleLink.Edit)
 			link.PUT("/:id", m2.Permission("console.link.update"), linkV, consoleLink.Update)
 			link.DELETE("/:id", m2.Permission("console.link.destroy"), consoleLink.Destroy)
@@ -131,7 +131,7 @@ func RoutersInit() *gin.Engine {
 		r.LoadHTMLGlob("template/home/*.tmpl")
 
 		r.Static("/static/home", "./static/home")
-		h.GET("/", web.Index)
+		h.GET("", web.Index)
 		h.GET("/categories/:name", web.IndexCate)
 		h.GET("/tags/:name", web.IndexTag)
 		h.GET("/detail/:id", web.Detail)

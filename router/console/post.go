@@ -35,7 +35,6 @@ func NewTrash() Trash {
 
 func (p *Post) Index(c *gin.Context) {
 	appG := api.Gin{C: c}
-
 	queryPage := c.DefaultQuery("page", "1")
 	queryLimit := c.DefaultQuery("limit", conf.Cnf.DefaultLimit)
 

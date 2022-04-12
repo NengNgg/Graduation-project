@@ -25,21 +25,14 @@
         <div class="col-md-8 col-md-offset-2">
             {{ .post.Post.Content}}
             <div class="clearfix"></div>
-            <hr class="nogutter">
-                <span style="color: #19A1F9">欢迎转载,但请附上原文地址哦,尊重原创,谢谢大家 本文地址: <a style="color: #19A1F9" href="/detail/{{.post.Post.Id}}/">https://www.iphpt.com/detail/{{.post.Post.Id}}/</a></span>
-            <hr class="nogutter">
-                <blockquote>
-                    <span>本站(PHP --> Golang)已重构,代码开源</span>
-                </blockquote>
-                <ul>
-                    <li>
-                        <span style="color: #3344de">Golang版本  代码地址: <a style="color: #f91919" href="https://github.com/izghua/go-blog">https://github.com/izghua/go-blog</a></span>
-                    </li>
-                    <li>
-                        <span style="color: #3344de">原PHP版本 代码地址: <a style="color: #f91919" href="https://github.com/xzghua/laravel-5-myblog">https://github.com/xzghua/laravel-5-myblog</a></span>
-                    </li>
-                </ul>
-            <hr class="nogutter">
+            </br>
+            <div>
+                 <h2><strong>大爷给口饭吃</strong></h2>
+                 <div style="display:flex;">
+                   <img src="{{.themeImg}}/zhifubao.jpg" alt="Close"/>
+                    <img src="{{.themeImg}}/weixin.png" alt="Close"/>
+                 </div>
+            </div>
             <div class="social-share"></div>
         </div>
 
@@ -61,7 +54,6 @@
                 </a>
             {{end}}
         </nav>
-
     </div>
         <div  style="text-align: center;width: 45%;margin: auto;">
             <div id="gitalk-container"></div>
