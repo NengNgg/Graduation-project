@@ -5,8 +5,8 @@ RUN echo -e "https://mirror.tuna.tsinghua.edu.cn/alpine/latest-stable/main\nhttp
 RUN apk update && apk add --no-cache git gcc musl-dev
 # 设置cibn.job为工作目录（RUN执行的命令会在改目录下操作）
 #WORKDIR $GOPATH/src/x/x/x
-# /home/admin/go_blog
-WORKDIR /home/admin/go_blog
+# /home/duneng/Graduation-project
+WORKDIR /home/duneng/Graduation-project
 # 将当前目录（也就是执行docker build xxx 的目录）下的文件拷贝到工作目录的上级目录下
 COPY  . .
 # 配置docker镜像的系统环境：启用go modules
@@ -17,19 +17,17 @@ RUN go env -w GOPROXY=https://proxy.golang.com.cn,direct
 RUN go mod download -x
 RUN go mod tidy
 # 构建项目，输出到镜像的指定目录下
-RUN go build -ldflags="-w -s" -o /home/admin/go_blog/apiserver
-#RUN go run ./example/main.go
-
+RUN go build -ldflags="-w -s" -o /home/duneng/Graduation-project/apiserver
 # 使用一个空的镜像打包发布后的go项目，以达到镜像体积的最小化
 FROM alpine:3.14
 #    echo "http://mirrors.cloud.aliyuncs.com/alpine/v3.14/main/" > /etc/apk/repositories
 # 从上面的镜像中拷贝编译后的程序到当前镜像x的指定位置
 
 WORKDIR /lcc-apiserver
-COPY --from=builder /home/admin/go_blog/apiserver .
-COPY --from=builder /home/admin/go_blog/static static/
-COPY --from=builder /home/admin/go_blog/conf conf/
-COPY --from=builder /home/admin/go_blog/docker-entrypoint.sh /usr/local/bin/
+COPY --from=builder /home/duneng/Graduation-project/apiserver .
+COPY --from=builder /home/duneng/Graduation-project/static static/
+COPY --from=builder /home/duneng/Graduation-project/conf conf/
+COPY --from=builder /home/duneng/Graduation-project/docker-entrypoint.sh /usr/local/bin/
 
 
 RUN echo "http://mirrors.aliyun.com/alpine/v3.14/main/" > /etc/apk/repositories && \
