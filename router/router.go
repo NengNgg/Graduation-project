@@ -55,7 +55,7 @@ func RoutersInit() *gin.Engine {
 			postV := validate.NewValidate().NewPostV.MyValidate()
 			p.GET("", m2.Permission("console.post.index"), consolePost.Index)
 			p.GET("/create", m2.Permission("console.post.create"), consolePost.Create)
-			p.POST("/", m2.Permission("console.post.store"), postV, consolePost.Store)
+			p.POST("", m2.Permission("console.post.store"), postV, consolePost.Store)
 			p.GET("/edit/:id", m2.Permission("console.post.edit"), consolePost.Edit)
 			p.PUT("/:id", m2.Permission("console.post.update"), postV, consolePost.Update)
 			p.DELETE("/:id", m2.Permission("console.post.destroy"), consolePost.Destroy)

@@ -36,8 +36,8 @@ var (
 )
 
 func DefaultInit() {
-	CnfInit()
 	ZLogInit()
+	CnfInit()
 	DbInit()
 	AlarmInit()
 	MailInit()
@@ -210,7 +210,7 @@ func CnfInit() {
 		ImgUploadUrl:          "http://localhost:8081/console/post/imgUpload",
 		ImgUploadDst:          "./static/uploads/images/",
 		ImgUploadBoth:         true, // img will upload to qiniu and your server local
-		QiNiuUploadImg:        true,
+		QiNiuUploadImg:        false,
 		QiNiuHostName:         "",
 		QiNiuAccessKey:        "",
 		QiNiuSecretKey:        "",

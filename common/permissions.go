@@ -14,7 +14,7 @@ var Permissions = []string{
 	"PUT/console.post.update",
 	"DELETE/console.post.destroy",
 	"GET/console.post.trash",
-	"POST/console.post.unTrash",
+	"PUT/console.post.unTrash",
 	"POST/console.post.imgUpload",
 	"GET/console.cate.index",
 	"GET/console.cate.edit",

@@ -11,8 +11,8 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-                  <time datetime="{{.post.Post.CreatedAt}}" itemprop="datePublished">
-                      {{.post.Post.CreatedAt}}
+                  <time datetime="{{.post.Post.CreateTimeStr}}" itemprop="datePublished">
+                      {{.post.Post.CreateTimeStr}}
                   </time>
                         |
                     {{range $k,$v := .post.Tags}}

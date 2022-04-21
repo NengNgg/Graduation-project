@@ -115,6 +115,7 @@ func (c *Auth) AuthRegister(ctx *gin.Context) {
 }
 func (c *Auth) Login(ctx *gin.Context) {
 	appG := api.Gin{C: ctx}
+	//通过图片验证码库创建一个key
 	customStore := customizeRdsStore{conf.CacheClient}
 	base64Captcha.SetCustomStore(&customStore)
 	var configD = base64Captcha.ConfigDigit{
@@ -175,6 +176,7 @@ func (c *Auth) AuthLogin(ctx *gin.Context) {
 	}
 
 	userIdStr := strconv.Itoa(user.Id)
+	//用户id作为区分用户
 	token, err := jwt.CreateToken(userIdStr)
 	if err != nil {
 		zgh.ZLog().Error("message", "auth.AuthLogin", "error", err.Error())

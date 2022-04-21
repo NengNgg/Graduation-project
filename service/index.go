@@ -140,6 +140,7 @@ func IndexPost(page string, limit string, indexType IndexType, name string) (ind
 		}
 		return indexPostIndex, nil
 	}
+
 	return
 }
 
@@ -301,6 +302,7 @@ func doCacheIndexPostDetail(cacheKey string, field string, postIdInt int) (postD
 }
 
 func PostViewAdd(postIdStr string) {
+
 	postIdInt, err := strconv.Atoi(postIdStr)
 	if err != nil {
 		zgh.ZLog().Error("message", "service.Index.PostViewAdd", "err", err.Error())
@@ -311,6 +313,7 @@ func PostViewAdd(postIdStr string) {
 		zgh.ZLog().Error("message", "service.Index.PostViewAdd", "err", err.Error())
 		return
 	}
+
 	return
 }
 

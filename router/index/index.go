@@ -45,7 +45,15 @@ func (w *Web) Index(c *gin.Context) {
 		w.Response(http.StatusOK, 404, h)
 		return
 	}
-
+	//修改浏览量和时间格式化
+	for i, post := range postData.PostListArr {
+		postView, err := service.PostView(post.Post.Id)
+		if err != nil {
+			zgh.ZLog().Error("web Index GetViewNum err:", err)
+		}
+		postData.PostListArr[i].View.Num = postView.Num
+		postData.PostListArr[i].Post.CreateTimeStr = postData.PostListArr[i].Post.CreatedAt.Format("2006-01-02 15:04:05")
+	}
 	h["post"] = postData.PostListArr
 	h["paginate"] = postData.Paginate
 	h["title"] = h["system"].(*entity.ZSystems).Title
@@ -140,7 +148,7 @@ func (w *Web) Detail(c *gin.Context) {
 		GithubClientSecret: conf.Cnf.GithubClientSecret,
 		GithubLabels:       conf.Cnf.GithubLabels,
 	}
-
+	postDetail.Post.CreateTimeStr = postDetail.Post.CreatedAt.Format("2006-01-02 15:04:05")
 	h["post"] = postDetail
 	h["github"] = github
 	h["tem"] = "detail"

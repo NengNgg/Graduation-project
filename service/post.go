@@ -718,3 +718,7 @@ func PostCateList(cateId int, limit int, offset int) (postListArr []*common.Cons
 
 	return postListArr, nil
 }
+
+func PostLocaltime(t time.Time) {
+
+}
