@@ -19,5 +19,5 @@ func main() {
 	r := router.RoutersInit()
 	fmt.Println("开始运行")
 
-	r.Run(":8081")
+	r.Run(":80")
 }
