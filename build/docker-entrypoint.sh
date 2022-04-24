@@ -7,4 +7,4 @@
 #elif [ "$ENV" = 'prd' ]; then
 #   . conf/set-env.prd.sh
 #fi
-exec ./apiserver
+exec ../apiserver

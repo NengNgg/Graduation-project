@@ -40,6 +40,6 @@ RUN echo "http://mirrors.aliyun.com/alpine/v3.14/main/" > /etc/apk/repositories 
     rm -rf /var/cache/apk/*
 #COPY lcc-apiserver/web/ /home/admin/lcc-apiserver/web/
 ENTRYPOINT ["docker-entrypoint.sh"]
-# 暴露镜像的8081端口
-EXPOSE 8081
+# 暴露镜像的80端口
+EXPOSE 80
 # 运行

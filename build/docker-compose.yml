@@ -1,5 +1,17 @@
 version: '3'
 services:
+  blog:
+    build: ./
+      image: apiserve:0.0.1
+      container_name: apiserve
+      restart: always
+      environment:
+        MYSQL_DSN: "root:root@tcp/mall_db?charset=utf8&parseTime=True&loc=Local"
+      ports:
+        - 80:80
+      depends_on:
+        - mysql
+        - redis
   mysql:
     hostname: mysql
     image: mysql:5.7.26
@@ -30,4 +42,4 @@ services:
       - /docker/mysql-redis/redis:/data
       - /docker/mysql-redis/redis.conf:/etc/redis.conf
     ports:
-      - "6379:6379"
+      - "16380:6379"
