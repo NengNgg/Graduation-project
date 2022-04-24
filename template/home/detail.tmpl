@@ -16,7 +16,7 @@
                   </time>
                         |
                     {{range $k,$v := .post.Tags}}
-                        <a href='../../tags/{{$v.Name}}'>{{$v.DisplayName}}</a>,
+                        <a style="border-radius:12.5px;background-color:gray;padding:4px 12px;color:#fff" href='../../tags/{{$v.Name}}'>{{$v.DisplayName}}</a>
                     {{end}}
                 </span>
                 <h1>{{ .post.Post.Title}}</h1>

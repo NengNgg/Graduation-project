@@ -41,12 +41,11 @@
                           <time datetime="{{$post.Post.CreateTimeStr}}" itemprop="datePublished">
                               {{$post.Post.CreateTimeStr}}
                           </time>
-                            |
+                           </br>
                             {{ range $t,$tag := $post.Tags }}
-                                <a href='tags/{{$tag.Name}}'>{{$tag.DisplayName}}</a>
-                                ,
+                                <a style="border-radius:12.5px;background-color:gray;padding:4px 12px;color:#fff"  href='tags/{{$tag.Name}}' >{{$tag.DisplayName}}</a> &nbsp
                             {{end}}
-                            |
+                            </br>
                              <span>浏览数:({{$post.View.Num}})</span>
                         </span>
                     </span>
