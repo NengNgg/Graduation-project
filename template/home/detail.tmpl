@@ -30,7 +30,7 @@
                  <h2><strong>大爷给口饭吃</strong></h2>
                  <div style="display:flex;">
                    <img src="{{.themeImg}}/zhifubao.jpg" alt="Close"/>
-                    <img src="{{.themeImg}}/weixin.png" alt="Close"/>
+                    <img src="{{.themeImg}}/weixin.jpg" alt="Close"/>
                  </div>
             </div>
             <div class="social-share"></div>
@@ -44,7 +44,6 @@
                     <span style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;"> {{.post.LastPost.Title}}</span>
                 </a>
             {{end}}
-
             {{if gt .post.NextPost.Id 0 }}
                 <a class="pull-right" href="/detail/{{ .post.NextPost.Id}}" style="max-width:35%;float: right;">
                     <span style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;max-width: 90%">
