@@ -1,0 +1,2 @@
+2022/04/24 18:33:37 mail.go:76:ERROR IP=192.168.3.24/10.8.0.74 method=mail.EmailType.IsRight may be is not semicolon=
+2022/04/24 18:33:37 default.go:122:ERROR IP=192.168.3.24/10.8.0.74 method=conf.MailInit message=may be is not semicolon
