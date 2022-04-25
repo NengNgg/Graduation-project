@@ -19,13 +19,13 @@ RUN go env -w GOPROXY=https://proxy.golang.com.cn,direct
 RUN go mod download -x
 RUN go mod tidy
 # 构建项目，输出到镜像的指定目录下
-RUN go build -ldflags="-w -s" -o /home/duneng/Graduation-project/apiserver
+RUN go build -ldflags="-w -s" -o /home/duneng/Graduation-project
 # 使用一个空的镜像打包发布后的go项目，以达到镜像体积的最小化
 FROM alpine:3.14
 #    echo "http://mirrors.cloud.aliyuncs.com/alpine/v3.14/main/" > /etc/apk/repositories
 # 从上面的镜像中拷贝编译后的程序到当前镜像x的指定位置
 
-WORKDIR /lcc-apiserver
+WORKDIR /Graduation-project
 COPY --from=builder /home/duneng/Graduation-project/apiserver .
 COPY --from=builder /home/duneng/Graduation-project/static static/
 COPY --from=builder /home/duneng/Graduation-project/conf conf/
