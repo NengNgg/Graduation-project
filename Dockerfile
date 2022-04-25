@@ -8,7 +8,9 @@ RUN apk update && apk add --no-cache git gcc musl-dev
 # /home/duneng/Graduation-project
 WORKDIR /home/duneng/Graduation-project
 # 将当前目录（也就是执行docker build xxx 的目录）下的文件拷贝到工作目录的上级目录下
-COPY  .. .
+COPY go.mod go.mod
+COPY go.sum go.sum
+
 # 配置docker镜像的系统环境：启用go modules
 RUN go env -w GO111MODULE=on
 # 配置go modules代理，package将从该开源代理拉取，避免GFW的问题
