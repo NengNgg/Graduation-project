@@ -30,7 +30,7 @@ WORKDIR /Graduation-project
 COPY --from=builder /home/duneng/Graduation-project/apiserver .
 COPY --from=builder /home/duneng/Graduation-project/static static/
 COPY --from=builder /home/duneng/Graduation-project/conf conf/
-COPY --from=builder /home/duneng/Graduation-project/build/docker-entrypoint.sh /usr/local/bin/
+COPY --from=builder /home/duneng/Graduation-project/docker-entrypoint.sh /usr/local/bin/
 
 
 RUN echo "http://mirrors.aliyun.com/alpine/v3.14/main/" > /etc/apk/repositories && \
