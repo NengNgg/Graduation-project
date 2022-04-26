@@ -34,7 +34,7 @@ services:
     image: redis:5.0.4
     container_name: redis
     restart: always
-    command: redis-server /etc/redis.conf # 启动redis命令
+    command: redis-server /etc/redis/redis.conf # 启动redis命令
     environment:
       - TZ=Asia/Shanghai
     volumes:
