@@ -34,11 +34,11 @@ services:
     image: redis:5.0.4
     container_name: redis
     restart: always
-    command: redis-server /home/redis.conf # 启动redis命令
+    command: redis-server /etc/redis.conf # 启动redis命令
     environment:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
-      - /home/duneng/Graduation-project/build/redis:/home/redis
+      - /home/duneng/Graduation-project/build/redis:/etc/redis
     ports:
       - "16380:6379"
