@@ -24,7 +24,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
 #     - /build/mysql:/var/lib/mysql/data # 映射数据库保存目录到宿主机，防止数据丢失
-      -  mysql:/var/lib/mysql
+#      -  mysql:/var/lib/mysql
       - /home/duneng/Graduation-project/build/mysql:/home/mysql
     ports:
       - "3306:3306"
