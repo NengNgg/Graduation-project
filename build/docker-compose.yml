@@ -4,8 +4,6 @@ services:
       image: apiserver:0.0.1
       container_name: apiserver
       restart: always
-      environment:
-        MYSQL_DSN: "root:root@tcp/mall_db?charset=utf8&parseTime=True&loc=Local"
       ports:
         - 80:80
       depends_on:
@@ -25,7 +23,7 @@ services:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
 #     - /build/mysql:/var/lib/mysql/data # 映射数据库保存目录到宿主机，防止数据丢失
 #      -  mysql:/var/lib/mysql
-      - /home/duneng/Graduation-project/build/mysql:/home/mysql
+      - ./mysql:/home/mysql
     ports:
       - "3306:3306"
 
@@ -39,6 +37,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
-      - /home/duneng/Graduation-project/build/redis:/home/redis
+      - ./redis/redis.conf:/home/redis
+      - ./redis/data:/data
     ports:
       - "16380:6379"
