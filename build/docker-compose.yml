@@ -24,8 +24,8 @@ services:
       - MYSQL_ROOT_PASSWORD=Blzg-301a # 设置root密码
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
-      - /build/mysql:/var/lib/mysql/data # 映射数据库保存目录到宿主机，防止数据丢失
-      - /docker/mysql-redis/my.cnf:/etc/mysql/my.cnf # 映射数据库配置文件
+#      - /build/mysql:/var/lib/mysql/data # 映射数据库保存目录到宿主机，防止数据丢失
+      - /build/mysql/my.cnf:/etc/mysql/my.cnf # 映射数据库配置文件
     ports:
       - "3306:3306"
 
@@ -39,7 +39,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
-      - /docker/mysql-redis/redis:/data
-      - /docker/mysql-redis/redis.conf:/etc/redis.conf
+      - /build/redis:/data
+      - /docker/redis/redis.conf:/etc/redis.conf
     ports:
       - "16380:6379"
