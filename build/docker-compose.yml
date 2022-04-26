@@ -1,9 +1,8 @@
 version: '3'
 services:
   blog:
-    build: ./
-      image: apiserve:0.0.1
-      container_name: apiserve
+      image: apiserver:0.0.1
+      container_name: apiserver
       restart: always
       environment:
         MYSQL_DSN: "root:root@tcp/mall_db?charset=utf8&parseTime=True&loc=Local"
