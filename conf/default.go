@@ -186,7 +186,7 @@ func CnfInit() {
 		DbPassword:            "Blzg-301a",
 		DbPort:                "3306",
 		DbDataBase:            "lengleng-blog",
-		DbHost:                "mysql",
+		DbHost:                "127.0.0.1",
 		AlarmType:             "mail,wechat",
 		MailUser:              "nengg@foxmail.com",
 		MailPwd:               "GQ13364077664",
