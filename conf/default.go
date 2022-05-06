@@ -198,7 +198,7 @@ func CnfInit() {
 		JwtJti:                "go-blog",
 		JwtSecretKey:          "go-blog",
 		JwtTokenLife:          3,
-		RedisAddr:             "redis",
+		RedisAddr:             "127.0.0.1:16380",
 		RedisPwd:              "redis",
 		RedisDb:               12,
 		QCaptchaAid:           "",
