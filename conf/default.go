@@ -178,15 +178,15 @@ func QCaptchaInit() {
 
 func CnfInit() {
 	cf := &Conf{
-		AppUrl:                "http://localhost:8081",
-		AppImgUrl:             "http://localhost:8081/static/uploads/images/",
+		AppUrl:                "http://www.lengleng.cloud",
+		AppImgUrl:             "http://www.lengleng.cloud/static/uploads/images/",
 		DefaultLimit:          "20",
-		DefaultIndexLimit:     "3",
+		DefaultIndexLimit:     "10",
 		DbUser:                "root",
-		DbPassword:            "prisma",
+		DbPassword:            "Blzg-301a",
 		DbPort:                "3306",
 		DbDataBase:            "lengleng-blog",
-		DbHost:                "127.0.0.1",
+		DbHost:                "mysql",
 		AlarmType:             "mail,wechat",
 		MailUser:              "nengg@foxmail.com",
 		MailPwd:               "GQ13364077664",
@@ -198,7 +198,7 @@ func CnfInit() {
 		JwtJti:                "go-blog",
 		JwtSecretKey:          "go-blog",
 		JwtTokenLife:          3,
-		RedisAddr:             "127.0.0.1:16380",
+		RedisAddr:             "redis",
 		RedisPwd:              "redis",
 		RedisDb:               12,
 		QCaptchaAid:           "",
@@ -207,7 +207,7 @@ func CnfInit() {
 		BackUpDuration:        "* * */1 * *",
 		BackUpSentTo:          "xzghua@gmail.com",
 		DataCacheTimeDuration: 720,
-		ImgUploadUrl:          "http://localhost:8081/console/post/imgUpload",
+		ImgUploadUrl:          "http://www.lengleng.cloud/console/post/imgUpload",
 		ImgUploadDst:          "./static/uploads/images/",
 		ImgUploadBoth:         true, // img will upload to qiniu and your server local
 		QiNiuUploadImg:        false,

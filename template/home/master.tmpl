@@ -130,7 +130,15 @@ $$          $$$o       "o$$o$"$$"$$o$$o$$"$$o"       $$$          ""o
             </ul>
         </li>
 
-
+         <li>
+            <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                {{ range $i,$link := .links }}
+                    <li><a href="{{$link.Link}}" target="_BLANK" class="animsition-link">{{$link.Name}}</a></li>
+                {{end}}
+                <li><a href="http://www.lengleng.cloud/"  class="animsition-link">棱棱博客</a></li>
+            </ul>
+        </li>
     </ul>
     <!-- Lists in Slidebars -->
     <ul class="sb-menu secondary">
