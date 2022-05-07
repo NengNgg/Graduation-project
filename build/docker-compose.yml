@@ -32,12 +32,12 @@ services:
     image: redis:5.0.4
     container_name: redis
     restart: always
-    command: redis-server /home/redis/redis.conf # 启动redis命令
+    command: redis-server --requirepass yourpass # 启动redis命令
     environment:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
-      - /root/gomodule/Graduation-project/build/redis:/home/redis
-      - /root/gomodule/Graduation-project/build/redis/data:/data
+#      - /root/gomodule/Graduation-project/build/redis:/home/redis
+#      - /root/gomodule/Graduation-project/build/redis/data:/data
     ports:
       - "16380:6379"
