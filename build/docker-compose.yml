@@ -11,7 +11,7 @@ services:
         - redis
   mysql:
     hostname: mysql
-    image: mysql:5.7.26
+    image: mysql:latest
     # network_mode: "host" # 如果需要容器使用宿主机IP(内网IP)，则可以配置此项
     container_name: mysql # 指定容器名称，如果不设置此参数，则由系统自动生成
     restart: always # 设置容器自启模式
@@ -29,7 +29,7 @@ services:
 
   redis:
     hostname: redis
-    image: redis:5.0.4
+    image: redis:latest
     container_name: redis
     restart: always
     command: redis-server --requirepass yourpass # 启动redis命令
