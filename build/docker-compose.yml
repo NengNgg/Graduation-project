@@ -33,7 +33,7 @@ services:
     container_name: redis
     restart: always
     command: redis-server /home/redis/redis.conf # 启动redis命令
-    environment:/
+    environment:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
