@@ -37,7 +37,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
-      - /root/gomodule/Graduation-project/build/redis/redis.conf:/home/redis
+      - /root/gomodule/Graduation-project/build/redis:/home/redis
       - /root/gomodule/Graduation-project/build/redis/data:/data
     ports:
       - "16380:6379"
