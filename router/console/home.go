@@ -104,7 +104,7 @@ func (h *HomeStatistics) Index(c *gin.Context) {
 	qcnt := Res{
 		Title: "未知BUG",
 		Icon:  "ios-bug",
-		Count: 998,
+		Count: 0,
 		Color: "#ed3f14",
 	}
 	data = append(data, qcnt)
